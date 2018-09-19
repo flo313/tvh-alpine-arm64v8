@@ -1,7 +1,7 @@
 # About
 ![Tvheadend](https://github.com/flo313/tvh-alpine/blob/master/logoTvheadend.png)
 
-Tvheadend (stable-master branch) based on Alpine Linux with libav for transcoding.
+Tvheadend (stable-master 4.2 branch) based on Alpine Linux ARM 64 version with libav for transcoding.
 
 # Volumes
 ```
