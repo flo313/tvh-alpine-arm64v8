@@ -50,7 +50,7 @@ git clone -b release/4.2 https://github.com/tvheadend/tvheadend.git /tmp/tvheade
 	cd /tmp/tvheadend && \
 	./configure --disable-avahi --disable-ffmpeg_static --disable-libfdkaac_static --disable-libmfx_static --disable-libtheora_static --disable-libvorbis_static --disable-libvpx_static --disable-libx264_static --disable-libx265_static --enable-libav --infodir=/usr/share/info --localstatedir=/var --mandir=/usr/share/man --prefix=/usr --sysconfdir=/config && \
 	make && \
-	make install
+	make install && \
 	apk del --purge build-dependencies ffmpeg-dev && \
 	rm -rf /var/cache/apk/* /tmp/*
 
