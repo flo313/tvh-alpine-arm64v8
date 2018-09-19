@@ -13,7 +13,6 @@ RUN apk add --no-cache \
 	sudo \
 	libhdhomerun \
 	tzdata \
-# Install runtime packages
 	bzip2 \
 	curl \
 	ffmpeg-libs \
@@ -25,7 +24,6 @@ RUN apk add --no-cache \
 	tar \
 	uriparser \
 	zlib && \
-# Install build packages
 apk add --no-cache --virtual=build-dependencies \
 	bsd-compat-headers \
 	cmake \
@@ -48,13 +46,11 @@ apk add --no-cache --virtual=build-dependencies \
 	x264-dev \
 	x265-dev \
 	zlib-dev && \
-# Build tvheadend
 git clone -b release/4.2 https://github.com/tvheadend/tvheadend.git /tmp/tvheadend && \
 	cd /tmp/tvheadend && \
 	./configure --disable-avahi --disable-ffmpeg_static --disable-libfdkaac_static --disable-libmfx_static --disable-libtheora_static --disable-libvorbis_static --disable-libvpx_static --disable-libx264_static --disable-libx265_static --enable-libav --infodir=/usr/share/info --localstatedir=/var --mandir=/usr/share/man --prefix=/usr --sysconfdir=/config && \
 	make && \
-	make install && \
-# Cleanup
+	make install
 	apk del --purge build-dependencies ffmpeg-dev && \
 	rm -rf /var/cache/apk/* /tmp/*
 
