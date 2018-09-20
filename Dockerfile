@@ -23,8 +23,8 @@ RUN apk add --no-cache \
 	socat \
 	tar \
 	uriparser \
-	zlib && \
-apk add --no-cache --virtual=build-dependencies \
+	zlib
+RUN apk add --no-cache --virtual=build-dependencies \
 	bsd-compat-headers \
 	cmake \
 	curl \
@@ -63,4 +63,4 @@ VOLUME ["$CONFIG_DIR","$RECORD_DIR"]
 # Expose ports for 'web interface' and 'streaming'
 EXPOSE 9981 9982
 
-ENTRYPOINT ["/start_tvh.sh"]
+CMD ["/start_tvh.sh"]

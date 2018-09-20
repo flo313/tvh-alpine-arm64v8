@@ -7,7 +7,8 @@ function ts {
 echo "$(ts) Creating group and user ${USER_NAME} (id ${USER_ID})..."
 # Create User and make Premissions on Folders
 addgroup -g ${USER_ID} ${USER_NAME}
-adduser  -H -D -S -u ${USER_ID} -G ${USER_NAME} ${USER_NAME}
+# adduser -D -S -u ${USER_ID} -G ${USER_NAME} ${USER_NAME}
+adduser -D -S -s /bin/bash -u ${USER_ID} -G ${USER_NAME} ${USER_NAME}
 
 echo "$(ts) Check user write access on folders (user: ${USER_NAME} id ${USER_ID})"
 echo "$(ts)    Check $CONFIG_DIR..."
